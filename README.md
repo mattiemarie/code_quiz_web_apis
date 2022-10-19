@@ -34,4 +34,4 @@ The following is the url to the diplyed web application:
 
 ## Description
 
-The goal of Challenge 03 was to create a password generator using JavaScript. The user will get to have a password created for them with personalized qualities, allowing them to choose the password length and whether or not it should contain: uppercase letters, lowercase letters, numbers and/or symbols.
+*****************************
