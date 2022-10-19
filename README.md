@@ -1,4 +1,4 @@
-# Web APIs: Word Quiz
+# Web APIs: Code Quiz
 
 UCF Coding Bootcamp Challenge 04
 
