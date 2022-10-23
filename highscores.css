@@ -1,0 +1,26 @@
+:root {
+    --pink: rgba(255, 71, 175, 1);
+    --red: rgba(227, 35, 90, 1);
+    --cream: rgb(255, 251, 239);
+    --blue: rgba(66, 164, 215, 1);
+    --teal: rgba(53, 190, 183, 1);
+    --green: rgba(177, 193, 54, 1);
+    --yellow: rgba(255, 206, 47, 1);
+    --purple: rgba(92, 61, 114, 1);
+    --orange: rgba(242, 99, 36, 1);
+    --dark: rgba(26, 19, 51, 1);
+  }
+
+body {
+    color: var(--cream);
+}
+
+#highScoresList {
+    list-style: none;
+    margin-bottom: 4rem;
+}
+
+.high-score {
+    font-size: 2.8rem;
+    margin-bottom: 0.5rem;
+}

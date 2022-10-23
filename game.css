@@ -1,0 +1,106 @@
+/* Code Quiz Color Palette */
+:root {
+    --pink: rgba(255, 71, 175, 1);
+    --red: rgba(227, 35, 90, 1);
+    --cream: rgb(255, 251, 239);
+    --blue: rgba(66, 164, 215, 1);
+    --teal: rgba(53, 190, 183, 1);
+    --green: rgba(177, 193, 54, 1);
+    --yellow: rgba(255, 206, 47, 1);
+    --purple: rgba(92, 61, 114, 1);
+    --orange: rgba(242, 99, 36, 1);
+    --dark: rgba(26, 19, 51, 1);
+  }
+  
+body {
+    color: var(--cream)
+}
+
+h3 {
+    font-size: 2rem;
+}
+
+.choice-container {
+    display: flex;
+    margin-bottom: 2.0rem;
+    width: 100%;
+    border-radius: 4px;
+    background-color: var(--teal);
+    font-size: 4rem;
+    min-width: 60rem;
+}
+
+.choice-container:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--teal);
+    transform: scale(1.02);
+    transition: transform 100ms;
+}
+
+.choice-prefix {
+    padding: 2rem 2.5rem;
+    color: var(--cream);
+}
+
+.choice-text {
+    padding: 2rem;
+    width: 100%;
+}
+
+.correct {
+    background: var(--green);
+}
+
+.incorrect {
+    background: var(--red)
+}
+
+/* TImer Display */
+.timer-text {
+    color: var(--purple);
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 3rem;
+}
+
+.timer-count {
+    color: var(--pink);
+    font-size: 7rem;
+}
+
+/* Heads up Display*/
+#hud {
+    display: flex;
+    justify-content: space-between;
+}
+.hud-prefix {
+    color: var(--teal);
+    text-align: center;
+    font-size: 3rem;
+}
+
+.hud-main-text{
+    text-align: center;
+}
+
+#progressBar{
+    width: 20rem;
+    height: 3rem;
+    border: 0.2rem solid var(--yellow);
+    margin-top: 2rem;
+    border-radius: 50px;
+    overflow: hidden;
+}
+
+#progressBarFull {
+    height: 100%;
+    background: var(--yellow);
+    width: 0%;
+}
+
+
+@media screen and (max-width: 768px) {
+    .choice-container {
+        min-width: 40rem;
+    }
+}

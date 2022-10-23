@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/* Code Quiz Color Palette */
+:root {
+    --pink: rgba(255, 71, 175, 1);
+    --red: rgba(227, 35, 90, 1);
+    --cream: rgb(255, 251, 239);
+    --blue: rgba(66, 164, 215, 1);
+    --teal: rgba(53, 190, 183, 1);
+    --green: rgba(177, 193, 54, 1);
+    --yellow: rgba(255, 206, 47, 1);
+    --purple: rgba(92, 61, 114, 1);
+    --orange: rgba(242, 99, 36, 1);
+    --dark: rgba(26, 19, 51, 1);
+    background-color: var(--cream);
+  }
+
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-size: 62.5%;
+    font-family: 'Source Code Pro', monospace, Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    font-size: 5.4rem;
+    color: var(--blue);
+    margin-bottom: 5rem;
+}
+
+h2 {
+    font-size: 4.2rem;
+    margin-bottom: 4rem;
+}
+
+/* Game Container */
+.container {
+    width: 100vw;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    max-width: 80rem;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+.flex-center {
+    justify-content: center;
+    align-items: center;
+}
+
+.justify-center {
+    justify-content: center;
+}
+
+.text-center {
+    text-align: center;
+}
+
+.hidden {
+    display: none;
+}
+
+/* Play & Highscores Buttons*/
+.button {
+    font-size: 2.4rem;
+    padding: 2rem 0;
+    width: 30rem;
+    text-align: center;
+    margin-bottom: 2rem;
+    text-decoration: none;
+    color: var(--dark);
+    background: var(--pink);
+    border-radius: 10px;
+}
+
+.button:hover {
+    cursor: pointer;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--pink);
+    transition: transform 150ms;
+    transform: scale(1.03);
+}
+
+.button[disabled]:hover {
+    cursor: not-allowed;
+    box-shadow: none;
+    transform: none;
+}
+
+#highscore_button {
+    background:var(--yellow);
+}
+
+/* Correct & Incorrect Choices Color Change*/
+.correct{
+    background: var(--green);
+}
+
+.incorrect{
+    background:var(--red)
+}
+
+#highscore_button:hover {
+   box-shadow: 0 0.4rem 1.4rem 0 var(--yellow);
+}
+
+/* End Page CSS Here */
+.end-form-container{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--pink); 
+}
+
+input::placeholder {
+    color: var(--cream);
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 100%;
+    outline: none;  
+}
+
+#end-text {
+    font-size: 2.4rem;
+    color: var(--red);
+    text-align: center;
+}
+
+#saveScoreButton {
+    border: none;
+}
