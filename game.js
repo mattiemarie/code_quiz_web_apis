@@ -3,12 +3,15 @@ const choices = Array.from(document.querySelectorAll('.choice-text'));
 const progressText = document.querySelector('#progressText');
 const scoreText = document.querySelector('#score');
 const progressBarFull = document.querySelector('#progressBarFull');
+var timerElement = document.querySelector('.timer-count');
 
 let currentQuestion = {}
 let acceptingAnswers = true
 let score = 0
 let questionCounter = 0
 let availableQuestions = []
+var timer;
+var timerCount;
 
 let questions = [
     {   
@@ -46,7 +49,7 @@ let questions = [
     {
         question: 'How do you write "Hello World" in an alert box?',
         choice1: 'alert("Hello World")',
-        choice2: 'msgBox("Hellow World")',
+        choice2: 'msgBox("Hello World")',
         choice3: 'alertBox="Hello World"',
         choice4: 'alertBox("Hello World")',
         answer: 1,
@@ -55,12 +58,33 @@ let questions = [
 
 const SCORE_POINTS = 20
 const MAX_QUESTIONS = 5
+const LOSE_TIME = 10
 
 startGame = () => {
     questionCounter = 0
+    timerCount = 60
     score = 0
     availableQuestions = [...questions]
+    startTimer()
     getNewQuestion()
+}
+  
+startTimer = () => {
+    timer = setInterval(function() {
+        timerCount--;
+        timerElement.textContent = timerCount;
+        if (timerCount > 0) {
+          } else {
+            return window.location.assign('end.html')
+        }
+      }, 1000);
+    
+      //Figure out how to have timer deduct time if wrong answer is selected
+      
+}
+
+loseGame = () => {
+    return window.location.assign('end.html')
 }
 
 getNewQuestion = () => {
@@ -74,7 +98,7 @@ getNewQuestion = () => {
     progressText.innerText = `Question ${questionCounter} of ${MAX_QUESTIONS}`
     progressBarFull.style.width = `${(questionCounter/MAX_QUESTIONS) * 100}%`
 
-    const questionsIndex = Math.floor(Math.random() * availableQuestions.length)
+    const questionsIndex = Math.floor(Math.random()*availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
     question.innerText = currentQuestion.question
 
@@ -100,6 +124,8 @@ choices.forEach(choice => {
 
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
+        } else {
+            timerCount -= 10;
         }
 
         selectedChoice.parentElement.classList.add(classToApply)
@@ -114,6 +140,7 @@ choices.forEach(choice => {
 incrementScore = num => {
     score +=num
     scoreText.innerText = score
+
 }
 
 
