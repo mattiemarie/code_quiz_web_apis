@@ -38,7 +38,10 @@ THEN I can save my initials and my score
 
 The following image demonstrates the application appearance:
 
-![image](https://user-images.githubusercontent.com/111001779/196494846-6da57607-5f00-4e2d-b299-0e64ccc516ec.png)
+
+
+![image](https://user-images.githubusercontent.com/111001779/197910066-8c2b06b1-d67c-434c-ae9c-2615d1710f4f.png)
+
 
 
 The following is the url to the diplyed web application:
@@ -47,4 +50,4 @@ The following is the url to the diplyed web application:
 
 ## Description
 
-*****************************
+The goal of Challenge 04 was to create a Code Quiz using HTML, CSS, and JavaScript. The user is able to take a 60 second timed quiz asking 5 multiple choice questions about JavaScript. If the user gets a question correct 20 points is added to their score, if the user gets a question incorrect 10 seconds will be deducted from their time. At the end of the quiz the user is able to save their score to the leader board.
