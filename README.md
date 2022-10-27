@@ -40,7 +40,11 @@ The following image demonstrates the application appearance:
 
 
 
-![image](https://user-images.githubusercontent.com/111001779/197910066-8c2b06b1-d67c-434c-ae9c-2615d1710f4f.png)
+
+
+![image](https://user-images.githubusercontent.com/111001779/198351627-481c66a7-a548-492f-891f-0dcb57e5a9ac.png)
+
+
 
 
 
