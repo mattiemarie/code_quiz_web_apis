@@ -1,0 +1,53 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+/* Code Quiz Color Palette */
+:root {
+    --pink: rgba(255, 71, 175, 1);
+    --red: rgba(227, 35, 90, 1);
+    --cream: rgb(255, 251, 239);
+    --blue: rgba(66, 164, 215, 1);
+    --teal: rgba(53, 190, 183, 1);
+    --green: rgba(177, 193, 54, 1);
+    --yellow: rgba(255, 206, 47, 1);
+    --purple: rgba(92, 61, 114, 1);
+    --orange: rgba(242, 99, 36, 1);
+    --dark: rgba(26, 19, 51, 1);
+  }
+  
+/* Game Over Page CSS Below */
+.gameover-form-container{
+    width: 100%;
+    display: flex;
+    flex-direction:column;
+    align-items: center;
+    max-width: 30rem;
+}
+
+input {
+    margin-bottom: 1rem;
+    width: 20rem;
+    padding: 1.5rem;
+    font-size: 1.8rem;
+    border: none;
+    box-shadow: 0 0.4rem 1.4rem 0 var(--pink); 
+}
+
+input::placeholder {
+    color: var(--cream);
+}
+
+#username {
+    margin-bottom: 3rem;
+    width: 100%;
+    outline: none;  
+}
+
+#gameover-text {
+    font-size: 2.4rem;
+    color: var(--red);
+    text-align: center;
+}
+
+#saveScoreButton {
+    border: none;
+}

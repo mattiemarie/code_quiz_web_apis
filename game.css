@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
 /* Code Quiz Color Palette */
 :root {
     --pink: rgba(255, 71, 175, 1);
@@ -12,6 +14,7 @@
     --dark: rgba(26, 19, 51, 1);
   }
   
+/* Main Area Display */  
 body {
     color: var(--cream)
 }
@@ -37,7 +40,7 @@ h3 {
     transition: transform 100ms;
 }
 
-.choice-prefix {
+.choice-option {
     padding: 2rem 2.5rem;
     color: var(--cream);
 }
@@ -68,18 +71,18 @@ h3 {
     font-size: 5rem;
 }
 
-/* Heads up Display*/
-#hud {
+/* Top Section Format*/
+#top-section {
     display: flex;
     justify-content: space-between;
 }
-.hud-prefix {
+.top-area {
     color: var(--teal);
     text-align: center;
     font-size: 2rem;
 }
 
-.hud-main-text{
+.top-main-text{
     text-align: center;
 }
 

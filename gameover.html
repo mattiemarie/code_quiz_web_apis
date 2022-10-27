@@ -4,17 +4,22 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>End Page</title>
+    <title>Game Over Page</title>
     <link rel="stylesheet" href="style.css">
-    <script defer src="end.js"></script>
+    <link rel="stylesheet" href="gameover.css">
+    <script defer src="gameover.js"></script>
 </head>
 
 <body>
+    <!--Container for Game Over Page-->
     <div class="container">
-       <div id="end" class="flex-center flex-column">
+       <div id="gameover" class="flex-center flex-column">
+        <!--Final Score-->
         <h1 id="finalScore">0</h1>
-        <form class="end-form-container">
-            <h2 id="end-text">Enter your name below to save your score!</h2>
+        <form class="gameover-form-container">
+
+            <!--Save Score-->
+            <h2 id="gameover-text">Enter your name below to save your score!</h2>
             <input type="text" name ="name" id="username" placeholder="Enter your name">
             <button class="button" id="saveScoreButton" type="submit" onclick="saveHighScore(event)">Save</button>
         </form>

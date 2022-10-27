@@ -13,6 +13,7 @@ let availableQuestions = []
 var timer;
 var timerCount;
 
+// Question/Choice/Answer
 let questions = [
     {   
         question: 'Which HTML element does Javascript go inside of?',
@@ -60,38 +61,41 @@ const SCORE_POINTS = 20
 const MAX_QUESTIONS = 5
 const LOSE_TIME = 10
 
+//Game Starts when Start game is selected
 startGame = () => {
     questionCounter = 0
+    //Timer Starts at 60 seconds
     timerCount = 60
+    //Score Starts at 0
     score = 0
     availableQuestions = [...questions]
     startTimer()
     getNewQuestion()
 }
   
+//Timer counting down when 0 seconds is hit - GAMEOVER
 startTimer = () => {
     timer = setInterval(function() {
         timerCount--;
         timerElement.textContent = timerCount;
         if (timerCount > 0) {
           } else {
-            return window.location.assign('end.html')
+            return window.location.assign('gameover.html')
         }
-      }, 1000);
-    
-      //Figure out how to have timer deduct time if wrong answer is selected
-      
+      }, 1000);    
 }
 
+//If game is lost user will be directed to GAMEOVER Page
 loseGame = () => {
-    return window.location.assign('end.html')
+    return window.location.assign('gameover.html')
 }
 
+//Questions
 getNewQuestion = () => {
     if(availableQuestions.length === 0 || questionCounter > MAX_QUESTIONS) {
        localStorage.setItem('mostRecentScore', score) 
 
-       return window.location.assign('end.html')
+       return window.location.assign('gameover.html')
     }
 
     questionCounter++
@@ -112,6 +116,7 @@ getNewQuestion = () => {
     acceptingAnswers = true
 }
 
+//Choices
 choices.forEach(choice => {
     choice.addEventListener('click', e => {
         if(!acceptingAnswers) return
@@ -122,8 +127,10 @@ choices.forEach(choice => {
 
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
+        //If Choice is correct - points will be added to score
         if(classToApply === 'correct') {
             incrementScore(SCORE_POINTS)
+        //If Choice is incorrect - time 10 seconds will be deducted from score
         } else {
             timerCount -= 10;
         }
@@ -140,7 +147,6 @@ choices.forEach(choice => {
 incrementScore = num => {
     score +=num
     scoreText.innerText = score
-
 }
 
 
