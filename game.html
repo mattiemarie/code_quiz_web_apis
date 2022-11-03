@@ -15,54 +15,42 @@
     <div class="container">
         
         <div>
-            <!--10 Second Timer for Each Question-->
-            <div class= "card timer">
+            <!--Question Number-->
+            <div id="heading-items">
+                <div class="question-text">
+                    <h3>Question</h3>
+                    <div id="question-count">0</div>
+                </div>
+
+                <!--Timer-->
                 <div class = "timer-text">
-                    <div class="large-font timer-count">0</div>
+                    <div id="timer-count">0</div>
                     <h3>seconds remaining</h3>
                 </div>
-            </div>
               
-            <!--Question Number/Progress-->
-            <div id="top-section">
-                <div class="t-section-item">
-                    <p id="progressText" class="top-area">
-                        Question
-                    </p>
-                    <div id="progressBar">
-                        <div id="progressBarFull"></div>
-                    </div>
-                </div>
-                
-                <!--Score Counter-->
-                <div class="t-section-item">
-                    <p class="top-area">
-                        Score
-                    </p>
-                    <h1 id="score">
-                        0
-                    </h1>
+                <!--Score-->
+                <div class="score-text">
+                    <h3>Score</h3>
+                    <div id="score-count">0</div>
                 </div>
             </div>
 
             <!--Question Formating-->
+
             <!--Question-->
             <h1 id="question">What is the answer to this question?</h1>
+
             <!--Answer Choices (A,B,C,D)-->
-            <div class="choice-container">
-                <p class="choice-option">A</p>
+            <div class="answer-choice">
                 <p class="choice-text" data-number="1">Choice A</p>
             </div>
-            <div class="choice-container">
-                <p class="choice-option">B</p>
+            <div class="answer-choice">
                 <p class="choice-text" data-number="2">Choice B</p>
             </div>
-            <div class="choice-container">
-                <p class="choice-option">C</p>
+            <div class="answer-choice">
                 <p class="choice-text" data-number="3">Choice C</p>
             </div>
-            <div class="choice-container">
-                <p class="choice-option">D</p>
+            <div class="answer-choice">
                 <p class="choice-text" data-number="4">Choice D</p>
             </div>
         </div>
