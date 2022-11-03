@@ -13,42 +13,63 @@
     --orange: rgba(242, 99, 36, 1);
     --dark: rgba(26, 19, 51, 1);
   }
-  
-/* Game Over Page CSS Below */
-.gameover-form-container{
-    width: 100%;
-    display: flex;
-    flex-direction:column;
-    align-items: center;
-    max-width: 30rem;
-}
 
-input {
-    margin-bottom: 1rem;
-    width: 20rem;
-    padding: 1.5rem;
-    font-size: 1.8rem;
-    border: none;
-    box-shadow: 0 0.4rem 1.4rem 0 var(--pink); 
-}
-
-input::placeholder {
-    color: var(--cream);
-}
-
-#username {
-    margin-bottom: 3rem;
-    width: 100%;
-    outline: none;  
-}
-
+  /* GAME OVER */
 #gameover-text {
-    font-size: 20px;
-    color: var(--red);
+    font-size: 55px;
+    color: var(--green);
     text-align: center;
+    margin-bottom: 15px;
+}
+  
+/* User Name Input */
+#username {
+    padding: 15px;
+    font-size: 20px;
+    background-color: var(--teal);
+    color: var(--yellow);
+    align-content: center;
     margin-bottom: 30px;
+    width: 30%;
+    outline: none;  
+    border: none;
 }
 
+/* Save Score Button */
 #saveScoreButton {
+    background-color: var(--yellow);
+    color: var(--purple);
     border: none;
+}
+
+#saveScoreButton:hover {
+    color: var(--cream);
+    box-shadow: -1px 3px 20px var(--yellow);
+    transition: transform 100ms;
+}
+
+/* Play Again Button */
+#playAgainButton {
+    background-color: var(--pink);
+    color: var(--purple);
+    border: none;
+}
+
+#playAgainButton:hover {
+    color: var(--cream);
+    box-shadow: -1px 3px 20px var(--pink);
+    transition: transform 100ms;
+}
+
+/* Go Home Button */
+#goHomeButton {
+    background-color: var(--green);
+    color: var(--purple);
+    border: none;
+}
+
+#goHomeButton:hover {
+    color: var(--cream);
+    box-shadow: -1px 3px 20px var(--green);
+    transition: transform 100ms;
 }

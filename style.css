@@ -77,7 +77,7 @@ h1 {
     background:var(--pink)
 }
 
-#play-button:hover{
+#play-button:hover {
     color: var(--cream);
     box-shadow: -1px 3px 20px var(--pink);
     transition: transform 100ms;
