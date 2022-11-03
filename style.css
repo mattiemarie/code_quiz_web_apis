@@ -15,6 +15,7 @@
     background-color: var(--purple);
   }
 
+
 *{
     box-sizing: content-box;
     margin: 0;
@@ -30,7 +31,8 @@ h1 {
 }
 
 
-/* Game Container */
+
+/* Game Container Display */
 .container {
     width: 120vw;
     height: 80vh;
@@ -70,7 +72,7 @@ h1 {
     transition: transform 100ms;
 }
 
-/*Play Button Formattin*/
+/*Play Button Formatting*/
 #play-button {
     background:var(--pink)
 }
