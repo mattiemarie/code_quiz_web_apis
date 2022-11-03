@@ -50,17 +50,9 @@ h3 {
     width: 100%;
 }
 
-.correct {
-    background: var(--green);
-}
-
-.incorrect {
-    background: var(--red)
-}
-
 /* TImer Display */
 .timer-text {
-    color: var(--purple);
+    color: var(--cre);
     font-size: 1rem;
     text-align: center;
     margin-bottom: 3rem;
@@ -80,10 +72,8 @@ h3 {
     color: var(--teal);
     text-align: center;
     font-size: 2rem;
-}
-
-.top-main-text{
-    text-align: center;
+    justify-content: right;
+    
 }
 
 #progressBar{
@@ -93,6 +83,7 @@ h3 {
     margin-top: 2rem;
     border-radius: 50px;
     overflow: hidden;
+    justify-content: left;
 }
 
 #progressBarFull {
@@ -101,16 +92,6 @@ h3 {
     width: 0%;
 }
 
-/* Correct & Incorrect Choices Color Change*/
-.correct{
-    background: var(--green);
-    box-shadow: -1px 3px 10px var(--green);
-}
-
-.incorrect{
-    background:var(--red);
-    box-shadow: -1px 3px 10px var(--red);
-}
 
 @media screen and (max-width: 768px) {
     .choice-container {
