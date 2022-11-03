@@ -12,11 +12,11 @@
     --purple: rgba(92, 61, 114, 1);
     --orange: rgba(242, 99, 36, 1);
     --dark: rgba(26, 19, 51, 1);
-    background-color: var(--cream);
+    background-color: var(--purple);
   }
 
 *{
-    box-sizing: border-box;
+    box-sizing: content-box;
     margin: 0;
     padding: 0;
     font-size: 62.5%;
@@ -24,96 +24,60 @@
 }
 
 h1 {
-    font-size: 3.5rem;
-    color: var(--blue);
-    margin-bottom: 3rem;
+    font-size: 40px;
+    color:var(--blue);
+    margin-bottom: 30px;
 }
 
-h2 {
-    font-size: 4.2rem;
-    margin-bottom: 4rem;
-}
 
 /* Game Container */
 .container {
-    width: 100vw;
-    height: 100vh;
+    width: 120vw;
+    height: 80vh;
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: top;
     align-items: center;
+    text-align: center;
     max-width: 80rem;
-    margin: 0 auto;
+    margin: 30px auto;
     padding: 2rem;
 }
 
-.flex-column {
-    display: flex;
-    flex-direction: column;
-}
 
-.flex-center {
-    justify-content: center;
-    align-items: center;
-}
-
-.justify-center {
-    justify-content: center;
-}
-
-.text-center {
-    text-align: center;
-}
-
-#title {
-    font-size: 5rem;
-    color: var(--teal)
-}
-
-.hidden {
-    display: none;
-}
-
-
-
-/* Play & Highscores Buttons*/
+/*Generic Button Formatting*/
 .button {
-    font-size: 2.4rem;
-    padding: 2rem 0;
-    width: 30rem;
+    font-size: 20px;
+    font-weight: bolder;
+    padding: 20px;
+    width: 20rem;
     text-align: center;
-    margin-bottom: 2rem;
+    margin-bottom: 20px;
     text-decoration: none;
-    color: var(--dark);
-    background: var(--pink);
     border-radius: 10px;
+    background-color: var(--cream);
+    color: var(--purple)
 }
 
-.button:hover {
-    cursor: pointer;
-    box-shadow: 0 0.4rem 1.4rem 0 var(--pink);
-    transition: transform 150ms;
-    transform: scale(1.03);
-}
-
-.button[disabled]:hover {
-    cursor: not-allowed;
-    box-shadow: none;
-    transform: none;
-}
-
+/*Highscore Button Formatting*/
 #highscore_button {
-    background:var(--yellow);
-}
-
-/* Correct & Incorrect Choices Color Change*/
-.correct{
-    background: var(--green);
-}
-
-.incorrect{
-    background:var(--red)
+    background:var(--green);
 }
 
 #highscore_button:hover {
-   box-shadow: 0 0.4rem 1.4rem 0 var(--yellow);
+    color: var(--cream);
+    box-shadow: -1px 3px 20px var(--green);
+    transition: transform 100ms;
 }
+
+/*Play Button Formattin*/
+#play-button {
+    background:var(--pink)
+}
+
+#play-button:hover{
+    color: var(--cream);
+    box-shadow: -1px 3px 20px var(--pink);
+    transition: transform 100ms;
+}
+

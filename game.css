@@ -101,6 +101,16 @@ h3 {
     width: 0%;
 }
 
+/* Correct & Incorrect Choices Color Change*/
+.correct{
+    background: var(--green);
+    box-shadow: -1px 3px 10px var(--green);
+}
+
+.incorrect{
+    background:var(--red);
+    box-shadow: -1px 3px 10px var(--red);
+}
 
 @media screen and (max-width: 768px) {
     .choice-container {
