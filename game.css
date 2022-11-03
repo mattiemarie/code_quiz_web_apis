@@ -13,8 +13,67 @@
     --orange: rgba(242, 99, 36, 1);
     --dark: rgba(26, 19, 51, 1);
   }
-  
-/*Questions*/  
+
+/* Top Section Format*/
+.heading-items {
+    display: flex;
+    justify-content: space-between;
+}
+
+/* Question Number */
+#question-text {
+    font-size: 55px;
+    font-weight: bold;
+    color: var(--yellow);
+    align-items: center;
+    justify-content:center;
+}
+
+#question-count {
+    font-size: 45px;
+}
+
+/* Score & Timer Container */
+.score-time-container {
+    align-items: center;
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 30px;
+}
+
+/* TImer */
+.timer-count {
+    color: var(--cream);
+    font-size: 50px;
+}
+
+.timer-text {
+    color: var(--pink);
+    font-size: 35px;
+    font-weight: bold;
+}
+
+
+/* Score */
+#score-count {
+    color: var(--cream);
+    font-size: 50px;
+}
+
+.score-text {
+    color: var(--pink);
+    font-size: 35px;
+    font-weight: bold;
+}
+ 
+
+/* Question */  
+#question {
+    font-size: 37px;
+    color: var(--blue)
+}
+
+/* Answers */
 .answer-choice {
     display: flex;
     margin-bottom: 20px;
@@ -23,6 +82,7 @@
     border-radius: 10px;
     background-color: var(--teal);
     font-size: 35px;
+    font-weight: bold;
     color: var(--dark)
 }
 
@@ -38,51 +98,10 @@
     width: 100%;
 }
 
-/* TImer Display */
-.timer-text {
-    color: var(--cre);
-    font-size: 20px;
-    text-align: center;
-    margin-bottom: 3rem;
+.correct {
+    background-color: var(--green)
 }
 
-#timer-count {
-    color: var(--pink);
-    font-size: 5rem;
-}
-
-/* Top Section Format*/
-.heading-items {
-    display: flex;
-    justify-content: space-between;
-}
-.top-area {
-    color: var(--teal);
-    text-align: center;
-    font-size: 2rem;
-    justify-content: right;
-    
-}
-
-#progressBar{
-    width: 20rem;
-    height: 3rem;
-    border: 0.2rem solid var(--yellow);
-    margin-top: 2rem;
-    border-radius: 50px;
-    overflow: hidden;
-    justify-content: left;
-}
-
-#progressBarFull {
-    height: 100%;
-    background: var(--yellow);
-    width: 0%;
-}
-
-
-@media screen and (max-width: 768px) {
-    .choice-container {
-        min-width: 30rem;
-    }
+.incorrect {
+    background-color: var(--red);
 }

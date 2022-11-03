@@ -74,7 +74,7 @@ startGame = () => {
 }
   
 //Timer counting down when 0 seconds is hit - GAMEOVER
-//startTimer = () => {
+startTimer = () => {
     timer = setInterval(function() {
         timerCount--;
         timerElement.textContent = timerCount;
