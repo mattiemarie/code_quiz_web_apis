@@ -42,7 +42,7 @@
 }
 
 /* TImer */
-.timer-count {
+#timer-count {
     color: var(--cream);
     font-size: 50px;
 }
@@ -92,7 +92,7 @@
     transition: transform 100ms;
 }
 
-.choice-text {
+.choicetext {
     justify-content: center;
     margin-top: 20px;
     width: 100%;
