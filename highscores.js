@@ -1,8 +1,8 @@
-const leaderboardList = document.querySelector('#leaderboardList');
+const leaderboardList = document.querySelector('.score-count');
 const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 
-leaderboardList.innerHTML = leaderboard
-.map(score => {
-    return `<li class= "player-scores">$(score.name)-$(score.score)</li>`
+leaderboardList.innerHTML = 
+leaderboard.map (leaderboardList => {
+    return `<li class= 'score-count'> $(score.name)-$(score.score)</li>`
 })
 .join('');
