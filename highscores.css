@@ -16,7 +16,7 @@
   }
 
 /* High Scores Text */
-#highscores {
+#leaderboard {
     color: var(--teal);
     font-size: 40px;
     font-weight: bold;
@@ -24,7 +24,7 @@
 }
 
 /* High Scores Name List */
-#highScoresList {
+#leaderboardList {
     font-size: 45px;
     font-weight: bold;
     color: var(--cream);

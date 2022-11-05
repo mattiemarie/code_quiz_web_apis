@@ -1,18 +1,8 @@
-const number_of_scores = 5;
-const highScores = 'highscores';
+const leaderboardList = document.querySelector('#leaderboardList');
+const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || [];
 
-const highScoresList = localStorage.getItem(highScores);
-const highscores = JSON.parse(highScoresList) ?? [];
-
-
-// function showHighScores () {
-// const highScoresList = document.querySelector('#highScoresList')
-// const highScores = document.querySelector('#highScores') || []
-
-// // Save List of Highscores
-
-
-// highScoresList.innerHTML =
-// highScores.map((score) => 
-//  `<li>${score.score} - ${score.name}).join('');
-// };
+leaderboardList.innerHTML = leaderboard
+.map(score => {
+    return `<li class= "player-scores">$(score.name)-$(score.score)</li>`
+})
+.join('');
