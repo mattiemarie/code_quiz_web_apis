@@ -1,7 +1,7 @@
 //Setting Question/Answer Variables
 const question = document.querySelector('#question');
-const answerChoices = Array.from(document.querySelectorAll('.choicetext'));
-const scoreText = document.querySelector('#score');
+const answerChoices = Array.from(document.querySelectorAll('.choiceoption'));
+const scoreCount = document.querySelector('#score-count');
 const questionSpot = document.querySelector('#question-count')
 
 //Setting Timer Variables
@@ -20,42 +20,42 @@ let availableQuestions = []
 let questions = [
     {   
         question: 'Which HTML element does Javascript go inside of?',
-        choicetext1: '<javascript>',
-        choicetext2: '<js>',
-        choicetext3: '<script>',
-        choicetext4: '<scripting>',
+        choiceoption1: '<javascript>',
+        choiceoption2: '<js>',
+        choiceoption3: '<script>',
+        choiceoption4: '<scripting>',
         answer: 3,
     },
     {
         question: 'How can you add a comment in JavaScript',
-        choicetext1: '/*This is a comment*/',
-        choicetext2: '<!--This is a comment-->',
-        choicetext3: '#This is a comment',
-        choicetext4: '//This is a comment',
+        choiceoption1: '/*This is a comment*/',
+        choiceoption2: '<!--This is a comment-->',
+        choiceoption3: '#This is a comment',
+        choiceoption4: '//This is a comment',
         answer: 4,
     },
     {
         question: 'How do you round the number 7.25 to the nearest whole number?',
-        choicetext1: 'Math.rnd(7.25)',
-        choicetext2: 'Math.round(7.25)',
-        choicetext3: 'rnd(7.25)',
-        choicetext4: 'round(7.25)',
+        choiceoption1: 'Math.rnd(7.25)',
+        choiceoption2: 'Math.round(7.25)',
+        choiceoption3: 'rnd(7.25)',
+        choiceoption4: 'round(7.25)',
         answer: 2,
     },
     {
         question: 'In JavaScript, the symbols +, -, *, and / are?',
-        choicetext1: 'expressions',
-        choicetext2: 'operators',
-        choicetext3: 'variables',
-        choicetext4: 'comparison operators',
+        choiceoption1: 'expressions',
+        choiceoption2: 'operators',
+        choiceoption3: 'variables',
+        choiceoption4: 'comparison operators',
         answer: 2,
     },
     {
         question: 'How do you write "Hello World" in an alert box?',
-        choicetext1: 'alert("Hello World")',
-        choicetext2: 'msgBox("Hello World")',
-        choicetext3: 'alertBox="Hello World"',
-        choicetext4: 'alertBox("Hello World")',
+        choiceoption1: 'alert("Hello World")',
+        choiceoption2: 'msgBox("Hello World")',
+        choiceoption3: 'alertBox="Hello World"',
+        choiceoption4: 'alertBox("Hello World")',
         answer: 1,
     }
 ]
@@ -75,8 +75,8 @@ startGame = () => {
     startTimer()
     getNewQuestion()
 }
- 
-//Timer                      Element Finished
+
+//Timer
 var timerElement = document.querySelector('#timer-count');
 
 startTimer = () => {
@@ -91,36 +91,48 @@ startTimer = () => {
 }
 
 
+
+
+
+
+
+
 //Questions
 getNewQuestion = () => {
+    if(availableQuestions.length === 0 || questionCounter > NUMBER_QUESTIONS) {
+        localStorage.setItem('scoreCount', score)
+
+    return window.location.assign('gameover.html')
+    }
 
     questionCounter++
     questionSpot.innerText = `Question ${questionCounter} of ${NUMBER_QUESTIONS}`
-
+ 
     const questionsIndex = Math.floor(Math.random()*availableQuestions.length)
     currentQuestion = availableQuestions[questionsIndex]
+   
     question.innerText = currentQuestion.question
 
-    answerChoices.forEach(choice => {
-        const number = choice.dataset['number']
-        choice.innerText = currentQuestion['choicetext' + number]
+    answerChoices.forEach(answerChoices => {
+        const number = answerChoices.dataset['number']
+        answerChoices.innerText = currentQuestion['choiceoption' + number]
     })
 
     availableQuestions.splice(questionsIndex, 1)
 
-    acceptingAnswers == true
+    acceptingAnswers = true
 }
 
 //Choices
-answerChoices.forEach(choice => {
-    choice.addEventListener('click', e => {
+answerChoices.forEach(answerChoices => {
+    answerChoices.addEventListener('click', e => {
         if(!acceptingAnswers) return
 
         acceptingAnswers = false
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset ['number']
 
-        let classToApply = selectedAnswer == currentQuestion.answerChoices ? 'correct' : 'incorrect'
+        let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
         //If Choice is correct - points will be added to score
         if(classToApply === 'correct') {
@@ -142,7 +154,7 @@ answerChoices.forEach(choice => {
 
 incrementScore = num => {
     score +=num
-    scoreText.innerText = score
+    scoreCount.innerText = score
 }
 
 
