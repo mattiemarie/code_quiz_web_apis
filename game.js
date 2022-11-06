@@ -15,8 +15,18 @@ let score = 0
 let questionCounter = 0
 let availableQuestions = []
 
+//Items that will not change throughout the game by will be applied to some changing element
 
-// Question/Choice/Answer
+//Points awarded for correct questions
+const POINTS_AWARDED = 20
+//Number of Question in the Quiz
+const NUMBER_QUESTIONS = 5
+//Number of Seconds a Players score will be decreased by if they answer a question incorrectly
+const TIME_DECREASE = 10
+
+
+// Questions
+//Questions will have 4 answer choices the player can select from
 let questions = [
     {   
         question: 'Which HTML element does Javascript go inside of?',
@@ -60,9 +70,6 @@ let questions = [
     }
 ]
 
-const POINTS_AWARDED = 20
-const NUMBER_QUESTIONS = 5
-const TIME_DECREASE = 10
 
 //Game Starts when Start game is selected
 startGame = () => {
@@ -76,13 +83,16 @@ startGame = () => {
     getNewQuestion()
 }
 
-//Timer
+//Timer: Player will begin with 60 seconds
 var timerElement = document.querySelector('#timer-count');
 
+//When the Game begins, so will the timer
 startTimer = () => {
     timer = setInterval(function() {
         timerCount--;
         timerElement.textContent = timerCount;
+
+//If the Player times out, they will automatically be given a GAME OVER!
         if (timerCount > 0) {
           } else {
             return window.location.assign('gameover.html')
@@ -90,21 +100,15 @@ startTimer = () => {
       }, 1000);    
 }
 
-
-
-
-
-
-
-
 //Questions
 getNewQuestion = () => {
-    if(availableQuestions.length === 0 || questionCounter > NUMBER_QUESTIONS) {
+    if(availableQuestions.length === 0) {
         localStorage.setItem('scoreCount', score)
 
     return window.location.assign('gameover.html')
     }
 
+    //Questions will increase by 1 as the user goes through the quiz (formatting will be: question number [of] total number of quetions)
     questionCounter++
     questionSpot.innerText = `Question ${questionCounter} of ${NUMBER_QUESTIONS}`
  
@@ -113,6 +117,7 @@ getNewQuestion = () => {
    
     question.innerText = currentQuestion.question
 
+//For Each question there is a corresponding correct answer. This is noted based on the dataset number set to each question.
     answerChoices.forEach(answerChoices => {
         const number = answerChoices.dataset['number']
         answerChoices.innerText = currentQuestion['choiceoption' + number]
@@ -123,7 +128,7 @@ getNewQuestion = () => {
     acceptingAnswers = true
 }
 
-//Choices
+//Is the Player's answer correct or incorrect
 answerChoices.forEach(answerChoices => {
     answerChoices.addEventListener('click', e => {
         if(!acceptingAnswers) return
@@ -132,15 +137,18 @@ answerChoices.forEach(answerChoices => {
         const selectedChoice = e.target
         const selectedAnswer = selectedChoice.dataset ['number']
 
+        //If the Player answers correctly then the color of the answer choice selected will turn GREEN
+        //If the Player answers incorrectly then the color of the answer choice selected will turn RED
         let classToApply = selectedAnswer == currentQuestion.answer ? 'correct' : 'incorrect'
 
-        //If Choice is correct - points will be added to score
+        //If Choice is correct points will be added to Players score
         if(classToApply === 'correct') {
             incrementScore(POINTS_AWARDED)
 
-        //If Choice is incorrect - time 10 seconds will be deducted from score
+        //If Choice is incorrect the timer will be decreased by 10 seconds
         } else {
             timerCount -= 10;
+            
         }
 
         selectedChoice.parentElement.classList.add(classToApply)
@@ -152,6 +160,7 @@ answerChoices.forEach(answerChoices => {
     })
 })
 
+//If a Player gets a question correct, they will reciever POINT_AWARDED: 20 pts
 incrementScore = num => {
     score +=num
     scoreCount.innerText = score

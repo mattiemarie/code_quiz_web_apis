@@ -2,11 +2,13 @@
 const playersName = document.querySelector('#username')
 const saveScoreButton = document.querySelector('#saveScoreButton')
 const finalGameScore = document.querySelector('#finalScore')
-const lastPlayersScore = localStorage.getItem('lastPlayersScore')
+const lastPlayersScore = localStorage.getItem('lastPlayerScore')
 
-//LEADERBOARD Setup
-const leaderboard = JSON.parse(localStorage.getItem('leaderboard')) || []
-const MAX_LEADERBOARD_WINNERS = 5
+//LEADERBOARD
+const playerscore = JSON.parse(localStorage.getItem('playerscore')) || []
+
+
+const MAX_LEADERBOARD_WINNERS = 7
 
 finalGameScore.innerText = lastPlayersScore;
 
@@ -15,22 +17,22 @@ saveHighScore = e => {
     e.preventDefault()
 
     //Score results will be shown and Player will input name or initials
-    const playerScore = {
+    const score = {
         score: lastPlayersScore,
         name: playersName.value  
     }
     //Player Score pushed to Leaderboard
-    leaderboard.push(playerScore)
+    playerscore.push(score)
 
     //Leaderboard is being sorted by Highest to Lowest Score
-    leaderboard.sort((a,b) => {
+    playerscore.sort((a,b) => {
         return b.score - a.score
     })
 
     //Only Top 7 High Scores will be Shown on Highscores Page
-    leaderboard.splice(7)
+    playerscore.splice(7)
 
     
-    localStorage.setItem('leaderboard', JSON.stringify(leaderboard))
+    localStorage.setItem('playerscore', JSON.stringify(playerscore))
     window.location.assign('index.html')
 };
