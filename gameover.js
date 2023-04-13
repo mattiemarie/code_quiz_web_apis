@@ -5,7 +5,7 @@ const finalGameScore = document.querySelector('#finalScore')
 const lastPlayersScore = localStorage.getItem('lastPlayerScore')
 
 //LEADERBOARD
-const playerscore = JSON.parse(localStorage.getItem('playerscore')) || []
+const playerScore = JSON.parse(localStorage.getItem('playerScore')) || []
 
 //Max Number of Winners to be presented -
 const MAX_LEADERBOARD_WINNERS = 7

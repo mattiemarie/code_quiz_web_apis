@@ -9,7 +9,7 @@
     --teal: rgba(53, 190, 183, 1);
     --green: rgba(177, 193, 54, 1);
     --yellow: rgba(255, 206, 47, 1);
-    --purple: rgba(92, 61, 114, 1);
+    --purple: rgba(105, 72, 151, 1);
     --orange: rgba(242, 99, 36, 1);
     --dark: rgba(26, 19, 51, 1);
   }
@@ -25,7 +25,7 @@
 /* FINAL SCORE */
 #finalScore {
     font-size: 55px;
-    color: var(--cream);
+    color: var(--purple);
     text-align: center;
     margin-bottom: 15px;
 }

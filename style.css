@@ -9,10 +9,10 @@
     --teal: rgba(53, 190, 183, 1);
     --green: rgba(177, 193, 54, 1);
     --yellow: rgba(255, 206, 47, 1);
-    --purple: rgba(92, 61, 114, 1);
+    --purple: rgba(105, 72, 151, 1);
     --orange: rgba(242, 99, 36, 1);
     --dark: rgba(26, 19, 51, 1);
-    background-color: var(--purple);
+    background-color: var(--cream);
   }
 
 
@@ -38,7 +38,7 @@ h1 {
     height: 80vh;
     display: flex;
     flex-direction: column;
-    justify-content: top;
+    justify-content: center;
     align-items: center;
     text-align: center;
     max-width: 80rem;

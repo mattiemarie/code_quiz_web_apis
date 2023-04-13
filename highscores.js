@@ -6,6 +6,6 @@ const playerscore = JSON.parse(localStorage.getItem('playerscore')) || []
 //Players Score List is presented to the Player in a list
 playersScoreList.innerHTML = 
 playerscore.map (score => {
-    return `<li class= 'player-score'> $(score.name)-$(score.score)</li>`
+    return `<li class = "playerScoreList"> ${score.name} - ${score.score}</li>`
 })
 .join('');
